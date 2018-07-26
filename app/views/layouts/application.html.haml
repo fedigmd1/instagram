@@ -1,6 +1,6 @@
 %html
 %head
-  %title Instagrmam
+  %title Instagram
   =stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
   =javascript_include_tag 'application', 'data_turbolinks-track'=> true
   =csrf_meta_tags
@@ -8,7 +8,7 @@
   %body
     %nav.navbar.navbar_inverse
       .container
-        .navbar-brand= link_to "Instagramam", root_path
+        .navbar-brand= link_to "Instagram", root_path
         - if user_signed_in?
           %ul.nav.navbar-nav.navbar-left
             %li= link_to "New", new_pic_path
