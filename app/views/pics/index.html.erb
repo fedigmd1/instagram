@@ -1,15 +1,17 @@
  
-<h1>it's a new instagram application </h1>
+<h1>It's a new instagram application </h1>
 
-<h2><td><%= link_to 'new', new_pic_path %></td></h2>
+<h2><td><%= link_to 'New', new_pic_path %></td></h2>
 <table>
  	<% @pics.each do |pic| %>
     <tr>
       <td><%= pic.title %></td>
       <td><%= pic.description%></td>
-      <td><%= link_to 'Show', pic_path(pic) %></td>
+      <td><%= link_to ' Show ', pic_path(pic) %></td>
 
-     <td><%= link_to 'edit', edit_pic_path(pic)%></td>
+     
+
+     <td><%= link_to ' Edit ', edit_pic_path(pic)%></td>
       </tr>
         
       <%end%>

@@ -1,0 +1,29 @@
+%html
+%head
+  %title Instagrmam
+  =stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+  =javascript_include_tag 'application', 'data_turbolinks-track'=> true
+  =csrf_meta_tags
+
+  %body
+    %nav.navbar.navbar_inverse
+      .container
+        .navbar-brand= link_to "Instagramam", root_path
+        - if user_signed_in?
+          %ul.nav.navbar-nav.navbar-left
+            %li= link_to "New", new_pic_path
+            %li= link_to "Settings", edit_user_registration_path
+            %li= link_to "Sign out", destroy_user_session_path, method: :delete
+
+        - else
+          %ul.nav.navbar-nav.navbar-left
+            %li= link_to "join", new_user_registration_path
+            %li= link_to "log in", new_user_session_path
+
+
+
+    .container
+      -flash.each do |name, msg|
+        =content_tag :div, msg, class: "alert alert-info"
+
+      = yield         
