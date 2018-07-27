@@ -1,14 +1,12 @@
  
 <h1>It's a new instagram application </h1>
 
-
-
-
 <table>
  	<% @pics.each do |pic| %>
     <tr>
-      <td><%= pic.title %></td>
-      <td><%= pic.description%></td>
+    <td><%= link_to (image_tag pic.image.url(:medium)), pic%></td>
+      <td><%= pic.title%></td>
+     
       <td><%= link_to ' Show ', pic_path(pic) %></td>
 
      
@@ -19,3 +17,6 @@
       <%end%>
 
       </table>
+
+
+

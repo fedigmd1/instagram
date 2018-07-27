@@ -1,4 +1,6 @@
 class PicsController < ApplicationController
+    
+
     before_action :find_pic, only: [:show, :edit, :update, :destroy]
     def index
     	@pics= Pic.all
@@ -12,8 +14,7 @@ class PicsController < ApplicationController
 	end
 
 	 def create 
-	 	@pic= current_user.pics.build (pic_params)
-
+	 	@pic= current_user.pics.build(pic_params)
 	 	if @pic.save
 	 		redirect_to @pic
 	 	else 
@@ -41,9 +42,8 @@ class PicsController < ApplicationController
 
 
       private  
-
       def pic_params
-      params.require(:pic).permit(:title, :description)
+      params.require(:pic).permit(:title, :description, :image)
       end
       def find_pic
       	@pic = Pic.find(params[:id])
